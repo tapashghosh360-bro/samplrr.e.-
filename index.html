@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171614" />
+  <title>THE REAL ESTATE | Spaces Worth Coming Home To</title>
+  <meta name="description" content="A curated, minimal real estate platform presenting selective apartments, penthouses, and developments across Bangladesh through a scroll-directed cinematic film." />
+  
+  <!-- Royal Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A77E4B'><text x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='14' font-weight='bold' fill='%23A77E4B'>TR</text><circle cx='12' cy='12' r='10' fill='none' stroke='%23A77E4B' stroke-width='1.2'/></svg>" />
+
+  <!-- Google Fonts: Cormorant Garamond (Royal Serif) + Inter & Manrope (Clean UI Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Master Editorial Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Tailwind CSS via CDN for rapid utility classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#171614',
+            graphite: '#292723',
+            'warm-stone': '#E9E4DB',
+            parchment: '#F6F2EA',
+            'soft-taupe': '#B4AA9D',
+            'muted-text': '#716A61',
+            antique: {
+              DEFAULT: '#A77E4B',
+              hover: '#936D3E',
+              subtle: 'rgba(167, 126, 75, 0.12)'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', 'Manrope', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-parchment text-ink font-sans selection:bg-antique selection:text-white antialiased">
+
+  <!-- Restrained Initial Loader (PRD Section 10) -->
+  <div id="initial-loader">
+    <div class="w-16 h-16 rounded-full border border-antique/30 flex items-center justify-center text-antique font-serif text-2xl font-bold tracking-widest">
+      TR
+    </div>
+    <div class="mt-4 font-serif text-xl tracking-[0.25em] text-ink font-medium">THE REAL ESTATE</div>
+    <div class="text-[11px] uppercase tracking-[0.2em] text-muted-text mt-1">Dhaka · Bangladesh</div>
+    <div class="loader-line">
+      <div class="loader-line-progress"></div>
+    </div>
+  </div>
+
+  <!-- Top Editorial Notice Bar -->
+  <div class="bg-graphite text-parchment border-b border-white/10 px-4 py-2 text-xs backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-antique animate-pulse"></span>
+        <span class="text-soft-taupe font-normal" id="sample-notice-text">
+          Sample platform: Curated Bangladesh residences for demonstration. No active transaction or government verification claimed.
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="admin-open-btn" class="text-[11px] text-parchment/80 hover:text-white px-2.5 py-0.5 rounded-full border border-white/15 transition flex items-center gap-1.5 hover:border-antique">
+          <svg class="w-3 h-3 text-antique" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          <span>CMS / Analytics</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Minimal Navigation (PRD Section 7) -->
+  <header class="fixed top-10 left-0 right-0 z-40 px-4 sm:px-6 transition-all duration-300" id="main-navbar">
+    <div class="max-w-7xl mx-auto header-glass rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-sm">
+      
+      <!-- Wordmark -->
+      <a href="#hero-scroll-track" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full border border-ink/20 flex items-center justify-center font-serif text-sm font-bold text-ink group-hover:border-antique group-hover:text-antique transition">
+          TR
+        </div>
+        <div>
+          <span class="font-serif tracking-[0.2em] text-lg font-bold text-ink block leading-none">THE REAL ESTATE</span>
+          <span class="text-[9px] tracking-[0.22em] text-muted-text block uppercase mt-0.5">Spaces worth coming home to</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-[13px] tracking-wide text-muted-text font-medium">
+        <a href="#hero-scroll-track" class="hover:text-ink transition">Home</a>
+        <a href="#collections-section" class="hover:text-ink transition">Collections</a>
+        <a href="#discover-section" class="hover:text-ink transition">Discover</a>
+        <a href="#nrb-section" class="hover:text-ink transition text-antique font-medium">For NRBs</a>
+        <a href="#trust-section" class="hover:text-ink transition">Clarity & Trust</a>
+        <a href="#partnerships-section" class="hover:text-ink transition">List with Us</a>
+      </nav>
+
+      <!-- Right Actions: Saved & WhatsApp Enquiry -->
+      <div class="flex items-center gap-3">
+        <button id="nav-saved-btn" class="text-xs px-3 py-1.5 rounded-full border border-ink/15 text-ink hover:bg-warm-stone transition flex items-center gap-1.5" title="Saved Residences">
+          <svg class="w-3.5 h-3.5 text-antique" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="font-medium">Saved</span>
+          <span id="nav-saved-count" class="bg-ink text-parchment text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+        </button>
+
+        <button id="nav-whatsapp-btn" class="btn-royal-antique !py-1.5 !px-4 !min-h-0 text-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </button>
+
+        <!-- English Language Indicator -->
+        <span class="text-xs font-semibold px-2 py-1 rounded bg-warm-stone text-muted-text border border-ink/10" title="Visible copy is English">EN</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =============================================================
+       SCROLL-DIRECTED CINEMATIC FILM (PRD Section 9 & 11)
+       Cinematic scroll with zoom parallax, masked text reveals,
+       staggered animations, and smooth inertia scrubbing
+       ============================================================= -->
+  <section id="hero-scroll-track">
+    <div id="hero-sticky-viewport">
+      
+      <!-- Zoom-Parallax Image Layer (will-change: transform for GPU) -->
+      <div id="hero-zoom-container">
+        <canvas id="hero-film-canvas"></canvas>
+      </div>
+
+      <!-- Dynamic Cinematic Vignette (opacity driven by scroll) -->
+      <div id="hero-vignette" class="hero-editorial-scrim"></div>
+
+      <!-- Ambient Grain Overlay for film texture -->
+      <div id="hero-grain-overlay"></div>
+
+      <!-- ===== HERO OPENING TITLE (visible 0–15%, fades out with parallax) ===== -->
+      <div id="hero-opening" class="hero-content-layer">
+        <div class="hero-content-centered">
+          <span class="scene-eyebrow-reveal">
+            <span class="eyebrow-inner">Cinematic Property Film · Dhaka, Bangladesh</span>
+          </span>
+          <h1 class="hero-title-reveal">
+            <span class="title-line"><span class="title-line-inner">Find a place</span></span>
+            <span class="title-line"><span class="title-line-inner">with presence.</span></span>
+          </h1>
+          <p class="hero-subtitle-reveal">
+            <span class="subtitle-inner">A considered collection of homes, projects, and places across Bangladesh.</span>
+          </p>
+          <div class="hero-cta-reveal">
+            <a href="#collections-section" class="btn-royal-antique text-xs">Discover Collection</a>
+            <a href="#discover-section" class="btn-royal-outline-dark text-xs">Browse All Properties</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 5-SCENE STORYBOARD OVERLAYS (PRD Section 9.2) ===== -->
+      
+      <!-- Scene 1: Arrival (0–18%) -->
+      <div class="scene-overlay" id="scene-1" data-scene="1">
+        <div class="scene-card-glass">
+          <div class="scene-card-inner">
+            <div class="scene-meta-reveal">
+              <span class="scene-meta-inner">
+                <span class="scene-number">01</span>
+                <span class="scene-divider"></span>
+                <span class="text-[11px] uppercase tracking-[0.18em] text-antique font-semibold">Arrival · Establishing Approach</span>
+              </span>
+            </div>
+            <div class="scene-location-reveal">
+              <span class="scene-location-inner badge-royal-subtle !bg-white/10 !text-parchment !border-white/15 text-[10px]">Gulshan 2, Dhaka</span>
+            </div>
+            <h2 class="scene-title-reveal">
+              <span class="scene-title-line"><span class="scene-title-inner">The Glass Pavilion</span></span>
+            </h2>
+            <p class="scene-desc-reveal">
+              <span class="scene-desc-inner">An iconic private lakefront residence established on Avenue 83. Introducing a calm, architectural standard for Dhaka's diplomatic enclave.</span>
+            </p>
+            <div class="scene-stats-reveal">
+              <span class="scene-stats-inner">
+                <span class="text-xs font-mono text-antique">4,800 sq ft · 5 Bedrooms · BDT 95.0M</span>
+              </span>
+            </div>
+            <div class="scene-action-reveal">
+              <span class="scene-action-inner">
+                <button class="btn-royal-antique !py-2 !px-4 text-xs open-prop-btn" data-id="prop-2">Explore Residence</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 2: Architecture (18–38%) -->
+      <div class="scene-overlay" id="scene-2" data-scene="2">
+        <div class="scene-card-glass">
+          <div class="scene-card-inner">
+            <div class="scene-meta-reveal">
+              <span class="scene-meta-inner">
+                <span class="scene-number">02</span>
+                <span class="scene-divider"></span>
+                <span class="text-[11px] uppercase tracking-[0.18em] text-antique font-semibold">Architecture · Material Integrity</span>
+              </span>
+            </div>
+            <div class="scene-location-reveal">
+              <span class="scene-location-inner badge-royal-subtle !bg-white/10 !text-parchment !border-white/15 text-[10px]">Bay Developments Ltd.</span>
+            </div>
+            <h2 class="scene-title-reveal">
+              <span class="scene-title-line"><span class="scene-title-inner">Architectural Purity</span></span>
+            </h2>
+            <p class="scene-desc-reveal">
+              <span class="scene-desc-inner">Formed from tactile poured concrete, weathered Burmese teakwood, and German Schuco thermal glazing engineered to withstand subtropical monsoons.</span>
+            </p>
+            <div class="scene-stats-reveal">
+              <span class="scene-stats-inner">
+                <span class="text-xs font-mono text-soft-taupe">Double-Glazed Acoustic Envelope · Deep Balcony Shading</span>
+              </span>
+            </div>
+            <div class="scene-action-reveal">
+              <span class="scene-action-inner">
+                <button class="btn-royal-outline-dark !py-2 !px-4 text-xs open-prop-btn" data-id="prop-2">View Facade Dossier</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 3: Threshold (38–60%) -->
+      <div class="scene-overlay" id="scene-3" data-scene="3">
+        <div class="scene-card-glass">
+          <div class="scene-card-inner">
+            <div class="scene-meta-reveal">
+              <span class="scene-meta-inner">
+                <span class="scene-number">03</span>
+                <span class="scene-divider"></span>
+                <span class="text-[11px] uppercase tracking-[0.18em] text-antique font-semibold">Threshold · Arrival & Privacy</span>
+              </span>
+            </div>
+            <div class="scene-location-reveal">
+              <span class="scene-location-inner badge-royal-subtle !bg-white/10 !text-parchment !border-white/15 text-[10px]">Single Residence Per Floor</span>
+            </div>
+            <h2 class="scene-title-reveal">
+              <span class="scene-title-line"><span class="scene-title-inner">The Private Foyer</span></span>
+            </h2>
+            <p class="scene-desc-reveal">
+              <span class="scene-desc-inner">A double-height stone portico, acoustic garden water wall, and biometric elevator foyer opening directly into your personal residence.</span>
+            </p>
+            <div class="scene-stats-reveal">
+              <span class="scene-stats-inner">
+                <span class="text-xs font-mono text-soft-taupe">Dedicated Biometric Lift · 3 Covered Parkings</span>
+              </span>
+            </div>
+            <div class="scene-action-reveal">
+              <span class="scene-action-inner">
+                <button class="btn-royal-outline-dark !py-2 !px-4 text-xs open-prop-btn" data-id="prop-2">Review Security Specs</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 4: Living (60–80%) -->
+      <div class="scene-overlay" id="scene-4" data-scene="4">
+        <div class="scene-card-glass">
+          <div class="scene-card-inner">
+            <div class="scene-meta-reveal">
+              <span class="scene-meta-inner">
+                <span class="scene-number">04</span>
+                <span class="scene-divider"></span>
+                <span class="text-[11px] uppercase tracking-[0.18em] text-antique font-semibold">Living · Light & Proportion</span>
+              </span>
+            </div>
+            <div class="scene-location-reveal">
+              <span class="scene-location-inner badge-royal-subtle !bg-white/10 !text-parchment !border-white/15 text-[10px]">Travertine & Teak</span>
+            </div>
+            <h2 class="scene-title-reveal">
+              <span class="scene-title-line"><span class="scene-title-inner">Sunlit Proportions</span></span>
+            </h2>
+            <p class="scene-desc-reveal">
+              <span class="scene-desc-inner">Expansive 3.8-metre ceilings, dual cross-ventilation corridors, bespoke Italian travertine flooring, and panoramic private lake terraces.</span>
+            </p>
+            <div class="scene-stats-reveal">
+              <span class="scene-stats-inner">
+                <span class="text-xs font-mono text-soft-taupe">South-Facing Lakeview · Private Plunge Pool</span>
+              </span>
+            </div>
+            <div class="scene-action-reveal">
+              <span class="scene-action-inner">
+                <button class="btn-royal-antique !py-2 !px-4 text-xs open-prop-btn" data-id="prop-2">View Floor Layout</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 5: Perspective (80–100%) -->
+      <div class="scene-overlay" id="scene-5" data-scene="5">
+        <div class="scene-card-glass">
+          <div class="scene-card-inner">
+            <div class="scene-meta-reveal">
+              <span class="scene-meta-inner">
+                <span class="scene-number">05</span>
+                <span class="scene-divider"></span>
+                <span class="text-[11px] uppercase tracking-[0.18em] text-antique font-semibold">Perspective · Timeless Permanence</span>
+              </span>
+            </div>
+            <div class="scene-location-reveal">
+              <span class="scene-location-inner badge-royal-trust text-[10px]">Verified Title Chain</span>
+            </div>
+            <h2 class="scene-title-reveal">
+              <span class="scene-title-line"><span class="scene-title-inner">Spaces Worth</span></span>
+              <span class="scene-title-line"><span class="scene-title-inner">Coming Home To</span></span>
+            </h2>
+            <p class="scene-desc-reveal">
+              <span class="scene-desc-inner">A curated collection of homes, projects, and places across Bangladesh. Explore the full editorial collection below.</span>
+            </p>
+            <div class="scene-action-reveal">
+              <span class="scene-action-inner" style="display:flex;gap:10px;flex-wrap:wrap;">
+                <button class="btn-royal-antique !py-2 !px-5 text-xs open-prop-btn" data-id="prop-2">Explore This Residence</button>
+                <a href="#collections-section" class="btn-royal-outline-dark !py-2 !px-5 text-xs">Browse All Properties ↓</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Interactive Timeline Pill & Scroll Cue -->
+      <div id="hero-bottom-bar" class="absolute bottom-0 left-0 right-0 px-6 pb-6 pt-16 flex flex-col sm:flex-row items-center justify-between gap-4 z-20 pointer-events-auto" style="background:linear-gradient(to top, rgba(23,22,20,0.7) 0%, transparent 100%)">
+        
+        <!-- Scroll Cue with animated line -->
+        <div id="scroll-cue-container" class="flex items-center gap-3 text-[11px] text-parchment/80 tracking-widest uppercase">
+          <div class="scroll-cue-line-wrap">
+            <div class="scroll-cue-line"></div>
+          </div>
+          <span>Scroll to explore · Rewinds upward</span>
+        </div>
+
+        <!-- 5-Step Timeline Pill with progress bar -->
+        <div class="timeline-pill flex items-center gap-1 sm:gap-2 relative">
+          <div id="timeline-progress-bar" class="absolute bottom-0 left-0 h-[2px] bg-antique rounded-full transition-all duration-300 ease-out" style="width:20%"></div>
+          <button class="timeline-step active" data-target-scene="1">01</button>
+          <button class="timeline-step" data-target-scene="2">02</button>
+          <button class="timeline-step" data-target-scene="3">03</button>
+          <button class="timeline-step" data-target-scene="4">04</button>
+          <button class="timeline-step" data-target-scene="5">05</button>
+        </div>
+
+        <!-- Jump to collection -->
+        <a href="#collections-section" class="text-[11px] text-parchment/70 hover:text-white transition flex items-center gap-1">
+          <span>Skip to Collection</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       CURATED EDITORIAL COLLECTIONS (PRD Section 11.3)
+       ============================================================= -->
+  <section id="collections-section" class="py-24 px-4 sm:px-6 max-w-7xl mx-auto border-b border-ink/10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-antique font-semibold block mb-2">Architectural Selections</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-ink font-normal">Curated Collections</h2>
+      </div>
+      <p class="text-sm text-muted-text max-w-md font-light">
+        Organized by architectural intent, location, and lifestyle rather than an overwhelming marketplace inventory.
+      </p>
+    </div>
+
+    <!-- 6 Collections Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- 1. Signature Residences -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group" data-collection="Signature Residences">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-muted-text block mb-1">Collection 01</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">Signature Residences</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">Duplex penthouses, cantilevered terraces, and private lakefront estates in Gulshan & Baridhara.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-ink font-medium">
+          <span>Explore Collection</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+      <!-- 2. Ready to Move -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group" data-collection="Ready to Move">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-muted-text block mb-1">Collection 02</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">Ready to Move</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">Completed luxury residences available for immediate handover with verified utility connections.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-ink font-medium">
+          <span>Explore Collection</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+      <!-- 3. New Projects -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group" data-collection="New Projects">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-muted-text block mb-1">Collection 03</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">New Projects</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">Pre-construction architectural landmarks by Shanta, Bay, and Rangs across prime urban avenues.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-ink font-medium">
+          <span>Explore Collection</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+      <!-- 4. Land & Plots -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group" data-collection="Land & Plots">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-muted-text block mb-1">Collection 04</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">Land & Plots</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">Select freehold residential and commercial plots in Purbachal New Town and Bashundhara R/A.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-ink font-medium">
+          <span>Explore Collection</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+      <!-- 5. Commercial Spaces -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group" data-collection="Commercial Spaces">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-muted-text block mb-1">Collection 05</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">Commercial Spaces</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">Grade-A corporate floorplates, private suites, and diplomatic retail spaces in Tejgaon & Banani.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-ink font-medium">
+          <span>Explore Collection</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+      <!-- 6. International Buyers -->
+      <div class="collection-card p-6 flex flex-col justify-between cursor-pointer group border-antique/40 bg-warm-stone/80" data-collection="International Buyers">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-antique font-semibold block mb-1">Collection 06 · NRB Concierge</span>
+          <h3 class="font-serif text-2xl text-ink font-medium group-hover:text-antique transition">International Buyers</h3>
+          <p class="text-xs text-muted-text mt-2 font-light">End-to-end guidance, NITA repatriation advisory, and consular power of attorney support.</p>
+        </div>
+        <div class="mt-8 flex items-center justify-between text-xs text-antique font-medium">
+          <span>Access NRB Desk</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       DISCOVER & SEARCH ENGINE (PRD Section 12)
+       Editorial search with focused filters & hierarchy
+       ============================================================= -->
+  <section id="discover-section" class="py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-antique font-semibold block mb-2">Curated Inventory</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-ink font-normal">Featured Residences</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Grid / List Switch -->
+        <div class="bg-warm-stone p-1 rounded-full flex items-center border border-ink/10 text-xs">
+          <button id="view-grid-btn" class="px-3 py-1 rounded-full font-medium transition bg-ink text-parchment">Grid</button>
+          <button id="view-list-btn" class="px-3 py-1 rounded-full font-medium transition text-muted-text hover:text-ink">List</button>
+        </div>
+        <!-- Reset filters -->
+        <button id="reset-filters-btn" class="text-xs text-muted-text hover:text-ink underline underline-offset-4 transition">
+          Reset Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Editorial Search Capsule -->
+    <div class="bg-white border border-ink/15 rounded-2xl p-6 shadow-sm mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        
+        <!-- Search Keyword -->
+        <div class="md:col-span-2">
+          <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1.5">
+            Search Location, Property or Developer
+          </label>
+          <div class="relative">
+            <input type="text" id="search-input" placeholder="Gulshan, Banani, Shanta, Penthouse, Lakeview..." class="w-full bg-parchment border border-ink/15 rounded-xl px-4 py-2.5 text-xs text-ink placeholder:text-muted-text/60 focus:outline-none focus:border-antique transition" />
+            <svg class="w-4 h-4 text-muted-text absolute right-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+        </div>
+
+        <!-- Location Dropdown -->
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1.5">
+            City & Area
+          </label>
+          <select id="filter-location" class="w-full bg-parchment border border-ink/15 rounded-xl px-3 py-2.5 text-xs text-ink focus:outline-none focus:border-antique transition cursor-pointer">
+            <option value="all">All Locations</option>
+            <option value="Gulshan">Dhaka · Gulshan</option>
+            <option value="Banani">Dhaka · Banani</option>
+            <option value="Baridhara">Dhaka · Baridhara</option>
+            <option value="Dhanmondi">Dhaka · Dhanmondi</option>
+            <option value="Uttara">Dhaka · Uttara</option>
+            <option value="Bashundhara R/A">Dhaka · Bashundhara R/A</option>
+            <option value="Purbachal">Dhaka · Purbachal</option>
+            <option value="Chattogram">Chattogram</option>
+          </select>
+        </div>
+
+        <!-- Property Type -->
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1.5">
+            Property Type
+          </label>
+          <select id="filter-type" class="w-full bg-parchment border border-ink/15 rounded-xl px-3 py-2.5 text-xs text-ink focus:outline-none focus:border-antique transition cursor-pointer">
+            <option value="all">All Types</option>
+            <option value="Penthouse">Penthouse</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Villa">Villa</option>
+            <option value="Plot">Plot / Land</option>
+            <option value="Commercial">Commercial</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Secondary Filters Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 pt-4 border-t border-ink/10">
+        
+        <!-- Purpose (Buy / Rent) -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-wider text-muted-text font-medium mb-1">Purpose</label>
+          <select id="filter-purpose" class="w-full bg-parchment border border-ink/15 rounded-lg px-2.5 py-1.5 text-xs text-ink focus:outline-none focus:border-antique">
+            <option value="all">All</option>
+            <option value="Buy" selected>Buy</option>
+            <option value="Rent">Rent</option>
+          </select>
+        </div>
+
+        <!-- Price Range -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-wider text-muted-text font-medium mb-1">Budget Range</label>
+          <select id="filter-budget" class="w-full bg-parchment border border-ink/15 rounded-lg px-2.5 py-1.5 text-xs text-ink focus:outline-none focus:border-antique">
+            <option value="all">Any Budget</option>
+            <option value="under20m">Under BDT 20M</option>
+            <option value="20m-50m">BDT 20M – 50M</option>
+            <option value="50m-100m">BDT 50M – 100M</option>
+            <option value="above100m">Above BDT 100M</option>
+          </select>
+        </div>
+
+        <!-- Bedrooms -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-wider text-muted-text font-medium mb-1">Bedrooms</label>
+          <select id="filter-bedrooms" class="w-full bg-parchment border border-ink/15 rounded-lg px-2.5 py-1.5 text-xs text-ink focus:outline-none focus:border-antique">
+            <option value="all">Any</option>
+            <option value="2">2+ Beds</option>
+            <option value="3">3+ Beds</option>
+            <option value="4">4+ Beds</option>
+            <option value="5">5+ Beds</option>
+          </select>
+        </div>
+
+        <!-- Sort By -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-wider text-muted-text font-medium mb-1">Sort By</label>
+          <select id="sort-select" class="w-full bg-parchment border border-ink/15 rounded-lg px-2.5 py-1.5 text-xs text-ink focus:outline-none focus:border-antique">
+            <option value="featured">Featured Collection</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="area-desc">Area: Largest First</option>
+            <option value="newest">Newest Additions</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Live Results Count -->
+    <div class="flex items-center justify-between mb-6 text-xs text-muted-text">
+      <span id="results-count-text">Showing 8 Curated Residences in Bangladesh</span>
+      <span class="text-antique font-mono">BDT Currency · Verified Documents</span>
+    </div>
+
+    <!-- Properties Container (Dynamically rendered via JS) -->
+    <div id="properties-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-results" class="hidden text-center py-20 bg-white border border-ink/10 rounded-2xl p-8">
+      <h3 class="font-serif text-2xl text-ink font-medium mb-2">No residences match your criteria</h3>
+      <p class="text-xs text-muted-text mb-6">Try broadening your search area, budget parameters, or property type.</p>
+      <button id="no-results-reset-btn" class="btn-royal-primary text-xs">
+        Reset All Filters
+      </button>
+    </div>
+
+  </section>
+
+  <!-- =============================================================
+       FOR NON-RESIDENT BANGLADESHIS (NRB) (PRD Section 6.2)
+       ============================================================= -->
+  <section id="nrb-section" class="py-24 px-4 sm:px-6 bg-warm-stone border-y border-ink/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-antique font-semibold block mb-2">International Buyer Concierge</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-ink font-normal leading-tight">
+          A seamless bridge for Non-Resident Bangladeshis.
+        </h2>
+        <p class="text-sm text-muted-text mt-4 font-light leading-relaxed">
+          Investing in Bangladesh real estate from abroad requires absolute transparency, foreign currency compliance, and reliable custody. We provide private representation for clients across North America, the UK, Europe, the Middle East, and Australia.
+        </p>
+      </div>
+
+      <!-- 3 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <div class="bg-white p-8 rounded-2xl border border-ink/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-warm-stone border border-ink/10 flex items-center justify-center text-antique font-serif text-lg font-bold mb-6">
+              01
+            </div>
+            <h3 class="font-serif text-2xl text-ink font-medium mb-3">Foreign Currency Repatriation</h3>
+            <p class="text-xs text-muted-text font-light leading-relaxed">
+              Full structuring under Bangladesh Bank NITA (Non-Resident Investor’s Taka Account) guidelines, ensuring authenticated capital inflow and legitimate repatriation of rental yields or sales proceeds.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-ink/10 text-[11px] text-antique font-mono">
+            Bangladesh Bank Guideline Compliant
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-ink/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-warm-stone border border-ink/10 flex items-center justify-center text-antique font-serif text-lg font-bold mb-6">
+              02
+            </div>
+            <h3 class="font-serif text-2xl text-ink font-medium mb-3">Consular Power of Attorney</h3>
+            <p class="text-xs text-muted-text font-light leading-relaxed">
+              Step-by-step guidance for legal Power of Attorney execution authenticated by Bangladesh High Commissions and embassies abroad, eliminating the requirement for international travel during signing.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-ink/10 text-[11px] text-antique font-mono">
+            Panel Advocate Vetting
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-ink/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-warm-stone border border-ink/10 flex items-center justify-center text-antique font-serif text-lg font-bold mb-6">
+              03
+            </div>
+            <h3 class="font-serif text-2xl text-ink font-medium mb-3">Virtual Consultations</h3>
+            <p class="text-xs text-muted-text font-light leading-relaxed">
+              Private 1-on-1 architectural video consultations scheduled around your specific time zone (GMT, EST, PST, GST, AEST) with high-definition walkthroughs and live document examination.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-ink/10 text-[11px] text-antique font-mono">
+            Private Video Walkthroughs
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NRB Actions -->
+      <div class="flex flex-wrap items-center gap-4">
+        <button id="nrb-consultation-btn" class="btn-royal-antique text-xs">
+          Schedule Private Virtual Consultation
+        </button>
+        <button id="nrb-guide-btn" class="btn-royal-outline text-xs">
+          Download NRB Real Estate Dossier (PDF)
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       TRUST & ADVISORY (PRD Section 11.5 & 13)
+       "Clarity at every step."
+       ============================================================= -->
+  <section id="trust-section" class="py-24 px-4 sm:px-6 max-w-7xl mx-auto border-b border-ink/10">
+    <div class="max-w-3xl mb-16">
+      <span class="text-xs uppercase tracking-[0.25em] text-antique font-semibold block mb-2">Our Operating Standard</span>
+      <h2 class="font-serif text-3xl sm:text-5xl text-ink font-normal leading-tight">
+        Clarity at every step.
+      </h2>
+      <p class="text-sm text-muted-text mt-4 font-light leading-relaxed">
+        The Real Estate does not operate as a mass listing board. We review every property’s title chain, developer track record, and municipal approvals through independent panel advocates before presentation.
+      </p>
+    </div>
+
+    <!-- 4 Trust Tenets -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      
+      <div class="p-6 bg-white border border-ink/10 rounded-xl">
+        <span class="badge-royal-trust text-[10px] mb-3">Identity Reviewed</span>
+        <h3 class="font-serif text-xl text-ink font-medium mb-2">Title Chain Verification</h3>
+        <p class="text-xs text-muted-text font-light leading-relaxed">
+          Examination of CS, SA, RS, and BS Porcha records, mutation khatians, and updated DCR receipts prior to showcase.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-ink/10 rounded-xl">
+        <span class="badge-royal-trust text-[10px] mb-3">Listing Reviewed</span>
+        <h3 class="font-serif text-xl text-ink font-medium mb-2">Factual Disclosures</h3>
+        <p class="text-xs text-muted-text font-light leading-relaxed">
+          Accurate carpet area, common space ratios, orientation, and handover dates clearly reported without inflation.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-ink/10 rounded-xl">
+        <span class="badge-royal-trust text-[10px] mb-3">Documents Supplied</span>
+        <h3 class="font-serif text-xl text-ink font-medium mb-2">Engineering & Approvals</h3>
+        <p class="text-xs text-muted-text font-light leading-relaxed">
+          RAJUK approved plan reference numbers, structural soil test certificates, and BUET engineering vetting recorded.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-ink/10 rounded-xl">
+        <span class="badge-royal-trust text-[10px] mb-3">Approval Reference</span>
+        <h3 class="font-serif text-xl text-ink font-medium mb-2">Independent Advisory</h3>
+        <p class="text-xs text-muted-text font-light leading-relaxed">
+          Our team provides client-first consultation. We never push developer inventory that conflicts with your parameters.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Mandatory Legal Disclosure (PRD Section 13) -->
+    <div class="disclosure-box">
+      <div class="font-medium text-ink mb-1 flex items-center gap-2">
+        <svg class="w-4 h-4 text-antique" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Independent Verification Disclosure</span>
+      </div>
+      <p>
+        Property information and uploaded documents are provided for convenience. Buyers should independently verify ownership, approvals, agreement terms, registration, taxes, fees, financing, and other legal or financial matters with qualified professionals and relevant authorities before making a decision.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- =============================================================
+       DEVELOPER & LANDOWNER ENTRY (PRD Section 11.6)
+       "Present a project with intention."
+       ============================================================= -->
+  <section id="partnerships-section" class="py-24 px-4 sm:px-6 bg-graphite text-parchment">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-antique font-semibold block mb-2">Partnership Inquiries</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal leading-tight">
+          Present a project with intention.
+        </h2>
+        <p class="text-sm text-soft-taupe mt-4 font-light leading-relaxed">
+          We collaborate selectively with Bangladesh’s premier developers and landholding families seeking dignified architectural presentation rather than crowded classified exposure.
+        </p>
+      </div>
+
+      <!-- 3 Entry Points -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 1. Present a Project -->
+        <div class="bg-ink/60 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-antique/50 transition">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-antique block mb-2">For Developers</span>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Present Your Project</h3>
+            <p class="text-xs text-soft-taupe font-light leading-relaxed mb-6">
+              Showcase signature developments through dedicated cinematic storytelling, verified documentation, and qualified high-net-worth client engagement.
+            </p>
+          </div>
+          <button class="btn-royal-outline-dark text-xs w-full partnership-trigger" data-type="developer">
+            Present Your Project
+          </button>
+        </div>
+
+        <!-- 2. List a Property -->
+        <div class="bg-ink/60 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-antique/50 transition">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-antique block mb-2">For Owners & Brokers</span>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">List a Property</h3>
+            <p class="text-xs text-soft-taupe font-light leading-relaxed mb-6">
+              Submit your bespoke apartment, penthouse, or private residence for inclusion in our curated editorial showcase after documentation review.
+            </p>
+          </div>
+          <button class="btn-royal-outline-dark text-xs w-full partnership-trigger" data-type="broker">
+            List a Property
+          </button>
+        </div>
+
+        <!-- 3. Discuss Land Partnership -->
+        <div class="bg-ink/60 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-antique/50 transition">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-antique block mb-2">For Landowners</span>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Discuss a Land Partnership</h3>
+            <p class="text-xs text-soft-taupe font-light leading-relaxed mb-6">
+              Connect prime freehold land in Gulshan, Banani, Dhanmondi, or Purbachal with vetted Grade-A developers for joint-venture development.
+            </p>
+          </div>
+          <button class="btn-royal-antique text-xs w-full partnership-trigger" data-type="landowner">
+            Discuss a Land Partnership
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       CLOSING CTA (PRD Section 11.7)
+       ============================================================= -->
+  <section class="py-24 px-4 sm:px-6 bg-parchment text-center max-w-4xl mx-auto">
+    <div class="w-12 h-12 rounded-full border border-ink/20 flex items-center justify-center font-serif text-lg font-bold text-antique mx-auto mb-6">
+      TR
+    </div>
+    <span class="text-xs uppercase tracking-[0.25em] text-muted-text font-medium block mb-2">A Clearer Way to Find Your Place</span>
+    <h2 class="font-serif text-4xl sm:text-6xl text-ink font-normal mb-4">
+      Spaces worth coming home to.
+    </h2>
+    <p class="text-sm text-muted-text max-w-xl mx-auto font-light leading-relaxed mb-8">
+      Whether you are exploring residences in Gulshan, planning an investment from London, or considering a land partnership, our senior advisors are ready to assist.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <button id="cta-shortlist-btn" class="btn-royal-primary text-xs">
+        Get a Curated Shortlist
+      </button>
+      <button id="cta-advisor-btn" class="btn-royal-antique text-xs">
+        Speak to an Advisor
+      </button>
+      <button id="cta-whatsapp-btn" class="btn-royal-outline text-xs flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-antique" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+        <span>Chat on WhatsApp</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       EDITORIAL FOOTER (PRD Section 7 & 12.3)
+       ============================================================= -->
+  <footer class="bg-ink text-parchment pt-20 pb-12 px-4 sm:px-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+        
+        <!-- Col 1: Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center font-serif text-sm font-bold text-antique">
+              TR
+            </div>
+            <span class="font-serif tracking-[0.2em] text-lg font-bold text-white">THE REAL ESTATE</span>
+          </div>
+          <p class="text-xs text-soft-taupe font-light leading-relaxed max-w-sm mb-6">
+            A selective, minimal real estate discovery platform presenting Dhaka’s most distinguished residential and commercial architecture through scroll-directed cinematic film.
+          </p>
+          <div class="text-[11px] text-muted-text">
+            Dhaka · Chattogram · Sylhet · Cox’s Bazar
+          </div>
+        </div>
+
+        <!-- Col 2: Bangladesh Locations (PRD 12.3) -->
+        <div>
+          <span class="text-xs uppercase tracking-widest text-antique font-semibold block mb-4">Prime Locations</span>
+          <ul class="space-y-2 text-xs text-soft-taupe font-light">
+            <li><a href="#discover-section" class="hover:text-white transition">Gulshan 1 & 2</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Banani & Road 11</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Baridhara Diplomatic Zone</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Dhanmondi Lakefront</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Uttara Sectors 3, 7, 12</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Bashundhara R/A</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Purbachal New Town</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <span class="text-xs uppercase tracking-widest text-antique font-semibold block mb-4">Experience</span>
+          <ul class="space-y-2 text-xs text-soft-taupe font-light">
+            <li><a href="#hero-scroll-track" class="hover:text-white transition">Scroll Film Story</a></li>
+            <li><a href="#collections-section" class="hover:text-white transition">Curated Collections</a></li>
+            <li><a href="#discover-section" class="hover:text-white transition">Featured Residences</a></li>
+            <li><a href="#nrb-section" class="hover:text-white transition">International Buyers</a></li>
+            <li><a href="#trust-section" class="hover:text-white transition">Clarity & Trust</a></li>
+            <li><a href="#partnerships-section" class="hover:text-white transition">List with Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform Advisory -->
+        <div>
+          <span class="text-xs uppercase tracking-widest text-antique font-semibold block mb-4">Advisory</span>
+          <ul class="space-y-2 text-xs text-soft-taupe font-light">
+            <li><a href="#trust-section" class="hover:text-white transition">Title Deed Chain</a></li>
+            <li><a href="#nrb-section" class="hover:text-white transition">NITA Account Guidance</a></li>
+            <li><a href="#nrb-section" class="hover:text-white transition">Power of Attorney Vetting</a></li>
+            <li><a href="#partnerships-section" class="hover:text-white transition">Land Partnerships</a></li>
+            <li><a href="#" id="footer-admin-link" class="hover:text-white transition">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Disclosures -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-muted-text font-light">
+        <div>
+          © 2026 The Real Estate. Sample website specification. Built for Bangladesh and global buyers.
+        </div>
+        <div class="flex items-center gap-6">
+          <span>English Sample Interface</span>
+          <span class="text-soft-taupe">·</span>
+          <span>Localization Architecture Prepared</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =============================================================
+       MODALS & DRAWERS
+       ============================================================= -->
+
+  <!-- 1. Property Detail Modal (PRD Section 13) -->
+  <div id="property-modal" class="modal-overlay hidden">
+    <div class="modal-content-royal relative p-6 sm:p-10">
+      
+      <!-- Close button -->
+      <button class="modal-close-btn absolute top-5 right-5 text-muted-text hover:text-ink w-8 h-8 rounded-full border border-ink/15 flex items-center justify-center transition">
+        ✕
+      </button>
+
+      <!-- Modal Injected Body -->
+      <div id="property-modal-content">
+        <!-- Rendered by js/app.js -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. WhatsApp Sample Fallback Sheet (PRD Section 14) -->
+  <div id="whatsapp-sheet-modal" class="modal-overlay hidden">
+    <div class="modal-content-royal max-w-lg p-6 sm:p-8">
+      
+      <div class="flex items-center justify-between border-b border-ink/10 pb-4 mb-6">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-antique/10 text-antique flex items-center justify-center">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-ink font-medium">WhatsApp Concierge</h3>
+            <span class="text-[10px] text-muted-text uppercase tracking-widest block">Direct Advisor Link</span>
+          </div>
+        </div>
+        <button class="modal-close-btn text-muted-text hover:text-ink text-sm">✕</button>
+      </div>
+
+      <!-- Specific PRD Requirement Text: "WhatsApp will be connected before launch." -->
+      <div class="bg-warm-stone border border-ink/10 rounded-xl p-4 mb-6">
+        <div class="text-xs font-semibold text-antique mb-1">Notice:</div>
+        <p class="text-xs text-ink font-medium mb-1">
+          WhatsApp will be connected before launch.
+        </p>
+        <p class="text-[11px] text-muted-text font-light leading-relaxed">
+          Our encrypted enterprise WhatsApp channel is being provisioned. In the interim, you can submit your inquiry below, schedule a callback, or book a private viewing.
+        </p>
+      </div>
+
+      <!-- Property Context Preservation -->
+      <div class="bg-white border border-ink/10 rounded-xl p-3.5 mb-6 text-xs">
+        <span class="text-muted-text block text-[10px] uppercase tracking-wider mb-0.5">Referenced Property Context:</span>
+        <span id="wa-context-property-name" class="font-medium text-ink block text-sm">The Glass Pavilion, Gulshan 2</span>
+        <span id="wa-context-property-id" class="text-muted-text font-mono text-[11px] block mt-0.5">Ref: prop-2</span>
+      </div>
+
+      <!-- 3 Clear Actions (PRD Section 14) -->
+      <div class="space-y-3">
+        <button id="wa-action-callback" class="w-full btn-royal-primary text-xs flex items-center justify-between">
+          <span>Request a Callback</span>
+          <span>→</span>
+        </button>
+        <button id="wa-action-viewing" class="w-full btn-royal-antique text-xs flex items-center justify-between">
+          <span>Book a Private Viewing</span>
+          <span>→</span>
+        </button>
+        <button id="wa-action-enquiry" class="w-full btn-royal-outline text-xs flex items-center justify-between">
+          <span>Send Detailed Message</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Lead Form Modal (Viewing / Callback / NRB / Enquiry) -->
+  <div id="lead-form-modal" class="modal-overlay hidden">
+    <div class="modal-content-royal max-w-lg p-6 sm:p-8">
+      
+      <div class="flex items-center justify-between border-b border-ink/10 pb-4 mb-6">
+        <div>
+          <h3 id="lead-modal-title" class="font-serif text-2xl text-ink font-medium">Request Private Viewing</h3>
+          <p id="lead-modal-subtitle" class="text-xs text-muted-text mt-0.5 font-light">We will arrange a private on-site or virtual appointment.</p>
+        </div>
+        <button class="modal-close-btn text-muted-text hover:text-ink text-sm">✕</button>
+      </div>
+
+      <form id="lead-form" class="space-y-4">
+        <input type="hidden" id="lead-form-type" value="viewing" />
+        <input type="hidden" id="lead-form-prop-id" value="" />
+        <input type="hidden" id="lead-form-prop-name" value="" />
+
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+            Full Name <span class="text-antique">*</span>
+          </label>
+          <input type="text" id="lead-name" required placeholder="e.g. Tariq Chowdhury" class="w-full bg-white border border-ink/15 rounded-xl px-3.5 py-2 text-xs text-ink focus:outline-none focus:border-antique" />
+          <span class="text-[10px] text-muted-text mt-0.5 block">Used to address you properly during communication.</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+              Phone Number <span class="text-antique">*</span>
+            </label>
+            <input type="tel" id="lead-phone" required placeholder="+880 17... or int’l" class="w-full bg-white border border-ink/15 rounded-xl px-3.5 py-2 text-xs text-ink focus:outline-none focus:border-antique" />
+            <span class="text-[10px] text-muted-text mt-0.5 block">Required for viewing confirmation.</span>
+          </div>
+
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+              Email Address
+            </label>
+            <input type="email" id="lead-email" placeholder="tariq@example.com" class="w-full bg-white border border-ink/15 rounded-xl px-3.5 py-2 text-xs text-ink focus:outline-none focus:border-antique" />
+            <span class="text-[10px] text-muted-text mt-0.5 block">For digital dossiers and calendar invite.</span>
+          </div>
+        </div>
+
+        <!-- Optional NRB Fields -->
+        <div id="lead-nrb-fields" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-ink/10">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+              Country of Residence
+            </label>
+            <input type="text" id="lead-country" placeholder="e.g. United Kingdom, USA" class="w-full bg-white border border-ink/15 rounded-xl px-3.5 py-2 text-xs text-ink focus:outline-none focus:border-antique" />
+          </div>
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+              Preferred Time Zone
+            </label>
+            <select id="lead-timezone" class="w-full bg-white border border-ink/15 rounded-xl px-3 py-2 text-xs text-ink focus:outline-none focus:border-antique">
+              <option value="GMT">GMT / BST (UK)</option>
+              <option value="EST">EST (New York, Toronto)</option>
+              <option value="PST">PST (California)</option>
+              <option value="GST">GST (Dubai, UAE)</option>
+              <option value="AEST">AEST (Sydney, Melbourne)</option>
+              <option value="BST">BST (Dhaka Local Time)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
+            Preferred Date & Time or Message
+          </label>
+          <textarea id="lead-message" rows="3" placeholder="e.g. Weekend morning preferred, interested in Lakeview side..." class="w-full bg-white border border-ink/15 rounded-xl px-3.5 py-2 text-xs text-ink focus:outline-none focus:border-antique"></textarea>
+        </div>
+
+        <button type="submit" class="w-full btn-royal-antique text-xs !py-3">
+          Submit Request
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 4. Lead Success Confirmation Modal -->
+  <div id="lead-success-modal" class="modal-overlay hidden">
+    <div class="modal-content-royal max-w-md p-8 text-center">
+      <div class="w-12 h-12 rounded-full bg-antique/10 text-antique mx-auto flex items-center justify-center font-serif text-2xl font-bold mb-4">
+        ✓
+      </div>
+      <h3 class="font-serif text-2xl text-ink font-medium mb-2">Inquiry Confirmed</h3>
+      <p class="text-xs text-muted-text leading-relaxed mb-6 font-light">
+        Thank you. Your request has been assigned to a senior property advisor. We will review your timing and reach out via your preferred channel.
+      </p>
+      <div class="bg-warm-stone p-3 rounded-xl text-xs text-ink font-mono mb-6">
+        Reference ID: <span id="lead-success-id" class="font-bold text-antique">#TR-8921</span>
+      </div>
+      <button class="modal-close-btn btn-royal-primary text-xs w-full">
+        Done
+      </button>
+    </div>
+  </div>
+
+  <!-- 5. Saved Properties Drawer -->
+  <div id="saved-modal" class="modal-overlay hidden">
+    <div class="modal-content-royal max-w-2xl p-6 sm:p-8">
+      <div class="flex items-center justify-between border-b border-ink/10 pb-4 mb-6">
+        <div>
+          <h3 class="font-serif text-2xl text-ink font-medium">Saved Residences</h3>
+          <p class="text-xs text-muted-text mt-0.5">Properties you have bookmarked for comparison.</p>
+        </div>
+        <button class="modal-close-btn text-muted-text hover:text-ink text-sm">✕</button>
+      </div>
+
+      <div id="saved-list-container" class="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Admin / CMS & Real-time Analytics Modal (PRD Section 20 & 21) -->
+  <div id="admin-modal" class="modal-overlay hidden">
+    <div class="modal-content-dark p-6 sm:p-8">
+      
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-antique font-semibold block mb-0.5">CMS & Platform Analytics</span>
+          <h3 class="font-serif text-2xl text-white font-medium">Platform Administration</h3>
+        </div>
+        <button class="modal-close-btn text-soft-taupe hover:text-white text-sm">✕</button>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+          <span class="block text-[10px] text-soft-taupe uppercase tracking-wider mb-1">Total Listings</span>
+          <span class="text-2xl font-serif font-bold text-white">10</span>
+        </div>
+        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+          <span class="block text-[10px] text-soft-taupe uppercase tracking-wider mb-1">Leads Captured</span>
+          <span id="admin-lead-count" class="text-2xl font-serif font-bold text-antique">0</span>
+        </div>
+        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+          <span class="block text-[10px] text-soft-taupe uppercase tracking-wider mb-1">Tracked PRD Events</span>
+          <span id="admin-event-count" class="text-2xl font-serif font-bold text-white">0</span>
+        </div>
+        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+          <span class="block text-[10px] text-soft-taupe uppercase tracking-wider mb-1">WhatsApp Mode</span>
+          <div class="flex items-center gap-1.5 mt-1">
+            <span id="admin-wa-mode-label" class="text-xs text-antique font-mono">Unset (Default)</span>
+            <button id="admin-toggle-wa-mode" class="text-[10px] px-2 py-0.5 rounded bg-white/10 text-white hover:bg-white/20 transition">
+              Toggle
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex items-center gap-4 border-b border-white/10 mb-4 text-xs font-semibold">
+        <button id="admin-tab-leads" class="text-antique border-b-2 border-antique pb-2">Customer Leads</button>
+        <button id="admin-tab-events" class="text-soft-taupe pb-2 hover:text-white">Real-Time Event Stream (PRD 21)</button>
+      </div>
+
+      <!-- Leads Table -->
+      <div id="admin-content-leads" class="max-h-[300px] overflow-y-auto">
+        <table class="w-full text-left text-xs text-soft-taupe">
+          <thead class="border-b border-white/10 text-white text-[11px] uppercase font-medium">
+            <tr>
+              <th class="py-2">Time</th>
+              <th class="py-2">Name</th>
+              <th class="py-2">Phone</th>
+              <th class="py-2">Type</th>
+              <th class="py-2">Property</th>
+              <th class="py-2">Status</th>
+            </tr>
+          </thead>
+          <tbody id="admin-leads-tbody">
+            <!-- Injected by app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Events Stream -->
+      <div id="admin-content-events" class="hidden max-h-[300px] overflow-y-auto space-y-2 text-xs font-mono">
+        <!-- Injected by app.js -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Master JavaScript Application -->
+  <script type="module" src="./js/bundle.js"></script>
+
+</body>
+</html>
