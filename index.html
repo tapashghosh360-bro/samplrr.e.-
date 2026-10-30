@@ -1017,10 +1017,16 @@
         <button class="modal-close-btn text-muted-text hover:text-ink text-sm">✕</button>
       </div>
 
-      <form id="lead-form" class="space-y-4">
-        <input type="hidden" id="lead-form-type" value="viewing" />
-        <input type="hidden" id="lead-form-prop-id" value="" />
-        <input type="hidden" id="lead-form-prop-name" value="" />
+      <form id="lead-form" name="the-real-estate-inquiry" method="POST" data-netlify="true" netlify-honeypot="website_address_hp" class="space-y-4">
+        <input type="hidden" name="form-name" value="the-real-estate-inquiry" />
+        <div class="hidden" style="display:none !important;" aria-hidden="true">
+          <label>Do not fill: <input name="website_address_hp" id="website-address-hp" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <input type="hidden" id="lead-form-type" name="lead_type" value="viewing" />
+        <input type="hidden" id="lead-form-prop-id" name="property_id" value="" />
+        <input type="hidden" id="lead-form-prop-name" name="property_name" value="" />
+
+        <div id="lead-error-msg" class="hidden text-xs text-red-700 bg-red-50 border border-red-200 p-2.5 rounded-xl font-medium"></div>
 
         <div>
           <label class="block text-[11px] uppercase tracking-wider text-muted-text font-medium mb-1">
@@ -1190,6 +1196,12 @@
       </div>
 
     </div>
+  </div>
+
+  <!-- Real-Time Security Alert Toast -->
+  <div id="security-toast" class="security-toast" role="alert" aria-live="assertive">
+    <div class="w-2.5 h-2.5 rounded-full bg-antique animate-pulse"></div>
+    <span id="security-toast-message">Security protocol active</span>
   </div>
 
   <!-- Master JavaScript Application -->

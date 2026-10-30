@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ==========================================================================
    THE REAL ESTATE — MASTER EDITORIAL STYLESHEET
    Design System: Neutral, Royal, Minimal, Cinematic
@@ -902,3 +906,69 @@ body {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   MOBILE & NETLIFY RESPONSIVE / HIGH-DPI ENHANCEMENTS
+   ========================================================================== */
+#hero-film-canvas {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Mobile Safe-Area and Responsive Bottom Bar */
+#hero-bottom-bar {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 639px) {
+  .scene-overlay {
+    padding: 16px 16px max(90px, calc(env(safe-area-inset-bottom) + 80px)) 16px !important;
+    justify-content: flex-end;
+  }
+  .scene-card-glass {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  .scene-card-inner {
+    padding: 18px 18px 16px !important;
+  }
+  .scene-title-reveal {
+    font-size: 1.6rem !important;
+    line-height: 1.15 !important;
+  }
+  .hero-title-reveal {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* Security Feedback Toast */
+.security-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  max-width: 380px;
+  background: rgba(23, 22, 20, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--antique-accent);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.security-toast.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+

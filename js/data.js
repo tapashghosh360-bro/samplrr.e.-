@@ -105,8 +105,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-001.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-001.jpg',
     floor_plans: [
       { title: 'Standard 3-Bed Layout (Unit A)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '1,850 sq ft' }
     ],
@@ -180,8 +180,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-040.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-040.jpg',
     floor_plans: [
       { title: 'Lower Penthouse Level (3,000 sq ft)', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80', area: '3,000 sq ft' },
       { title: 'Upper Private Lounge & Terrace (1,800 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '1,800 sq ft' }
@@ -254,8 +254,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-080.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-080.jpg',
     floor_plans: [
       { title: '4-Bed Sky Residence (3,420 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '3,420 sq ft' }
     ],
@@ -326,8 +326,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-120.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-120.jpg',
     floor_plans: [
       { title: 'Diplomatic Suite Layout (3,950 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '3,950 sq ft' }
     ],
@@ -397,8 +397,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-090.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-090.jpg',
     floor_plans: [
       { title: 'Standard 3-Bed Layout (2,350 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '2,350 sq ft' }
     ],
@@ -467,8 +467,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-010.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-010.jpg',
     floor_plans: [
       { title: '4-Bed Executive Layout (2,800 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '2,800 sq ft' }
     ],
@@ -537,8 +537,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-030.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-030.jpg',
     floor_plans: [
       { title: '3-Bed Family Floor Plan (2,100 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '2,100 sq ft' }
     ],
@@ -607,8 +607,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-060.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-060.jpg',
     floor_plans: [
       { title: 'Site Layout & Setback Map (5 Katha)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '3,600 sq ft' }
     ],
@@ -676,8 +676,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-140.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-140.jpg',
     floor_plans: [
       { title: 'Hillside 3-Bed Layout (2,600 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '2,600 sq ft' }
     ],
@@ -744,8 +744,8 @@ export const propertiesData = [
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80'
     ],
-    hero_video: './public/videos/hero.mp4',
-    poster_image: './public/frames/ezgif-frame-001.jpg',
+    hero_video: '/videos/hero.mp4',
+    poster_image: '/frames/ezgif-frame-001.jpg',
     floor_plans: [
       { title: 'Full Floorplate Open Commercial Layout (6,200 sq ft)', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80', area: '6,200 sq ft' }
     ],

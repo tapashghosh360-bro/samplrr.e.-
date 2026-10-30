@@ -2,12 +2,25 @@
 export default {
   content: [
     "./index.html",
+    "./js/**/*.{js,ts}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        ink: '#171614',
+        graphite: '#292723',
+        'warm-stone': '#E9E4DB',
+        parchment: '#F6F2EA',
+        'soft-taupe': '#B4AA9D',
+        'muted-text': '#716A61',
+        antique: {
+          DEFAULT: '#A77E4B',
+          hover: '#936D3E',
+          subtle: 'rgba(167, 126, 75, 0.12)',
+          border: 'rgba(167, 126, 75, 0.25)',
+        },
         obsidian: {
           DEFAULT: '#090B0D',
           50: '#1a1f24',
@@ -46,8 +59,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Cinzel"', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', '"Inter"', '"Hind Siliguri"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', '"Cinzel"', 'Georgia', 'serif'],
+        sans: ['Inter', 'Manrope', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         bengali: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
       },
       backdropBlur: {
@@ -58,26 +71,11 @@ export default {
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.45)',
         'glass-glow': '0 0 25px rgba(255, 255, 255, 0.06), 0 8px 32px 0 rgba(0, 0, 0, 0.5)',
-        'emerald-glow': '0 0 20px rgba(16, 185, 129, 0.25)',
+        'royal': '0 20px 50px rgba(23, 22, 20, 0.18)',
+        'antique-glow': '0 0 20px rgba(167, 126, 75, 0.25)',
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-out forwards',
-        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        pulseSubtle: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.7' },
-        }
+      screens: {
+        'xs': '420px',
       }
     },
   },

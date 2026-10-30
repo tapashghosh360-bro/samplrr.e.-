@@ -1,0 +1,3 @@
+/public/*  /:splat  200
+/api/lead  /.netlify/functions/submit-lead  200
+/*  /index.html  200

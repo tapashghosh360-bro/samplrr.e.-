@@ -1,0 +1,53 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+# HTTP Security & Caching Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Content-Security-Policy = "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: blob: https://images.unsplash.com https://*.unsplash.com; media-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://fonts.googleapis.com;"
+
+# Aggressive immutable caching for video & cinematic canvas frames
+[[headers]]
+  for = "/frames/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Accept-Ranges = "bytes"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Universal Redirect & Rewrite Rules
+# Seamlessly handles requests prefixed with /public/ to root
+[[redirects]]
+  from = "/public/*"
+  to = "/:splat"
+  status = 200
+
+# API Lead submission route to Netlify Function
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/submit-lead"
+  status = 200
+
+# Single Page App fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
